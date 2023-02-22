@@ -7,7 +7,7 @@ def create_vector(n):
     """
     Creates a vector of length n with random integer values.
     """
-    return [random.randint(0, 100) for i in range(n)]
+    return [random.randint(-1000000, 1000000) for i in range(n)]
 
 def quick_sort(vector):
     """
@@ -114,7 +114,7 @@ def compare_sorting_algorithms(n):
     heap_sort_time = time.time()
     heap_sort(vector)
     heap_sort_time = time.time() - heap_sort_time
-    plt.bar(['Selection Sort', 'Heap Sort','Quick Sort', 'Merge Sort'], [selection_sort_time, heap_sort_time, quick_sort_time,merge_sort_time])
+    plt.bar(['Heap Sort','Quick Sort', 'Merge Sort'], [heap_sort_time, quick_sort_time,merge_sort_time])
     plt.title('Sorting Algorithm Comparison')
     plt.ylabel('Time Taken (seconds)')
     plt.show()
